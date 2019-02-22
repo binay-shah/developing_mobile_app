@@ -30,7 +30,7 @@
         android:clickable="true"
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/main.hint.billamount"
+        android:hint="@string/main_hint_billamount"
         android:inputType="numberDecimal"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorWhite"
@@ -95,7 +95,7 @@
 
     <TextView
         android:id="@+id/tvServiceRating"
-        android:text="@string/main.msg.servicerating"
+        android:text="@string/main_msg_servicerating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/vRatingSeparator"
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/main.msg.tippercent"
+            android:text="@string/main_msg_tippercent"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="@dimen/activity_vertical_margin"/>
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/main.msg.tiptotal"
+            android:text="@string/main_msg_tiptotal"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="@dimen/activity_vertical_margin"/>
@@ -157,7 +157,7 @@
         android:layout_below="@+id/vBillSeparator"
         android:layout_marginTop="@dimen/activity_vertical_margin_big"
         android:gravity="center"
-        android:text="@string/main.msg.billtotal"
+        android:text="@string/main_msg_billtotal"
         android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite"/>
@@ -169,7 +169,7 @@
         android:layout_below="@+id/tvBillTotal"
         android:layout_marginTop="@dimen/activity_vertical_margin_big"
         android:gravity="center"
-        android:text="@string/main.msg.billtotalresult"
+        android:text="@string/main_msg_billtotalresult"
         android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorWhite"/>
