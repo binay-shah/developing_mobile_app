@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String TAG =
+            "DEBUG";
+
 
     EditText etBillAmount;
 
@@ -38,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         tvTipPercent = (TextView)findViewById(R.id.tvTipPercent);
         tvTipAmount  = (TextView)findViewById(R.id.tvTipAmount);
         tvBillTotalAmount = (TextView)findViewById(R.id.tvBillTotalAmount);
-        Log.d("XXXX", "created"+percentage);
+        Log.d(TAG, "created"+percentage);
         if(savedInstanceState != null){
             percentage = savedInstanceState.getFloat("percentage");
-            Log.d("XXXX", "recreated"+percentage);
+            Log.d(TAG, "recreated"+percentage);
         }
 
         etBillAmount.addTextChangedListener(new TextWatcher() {
@@ -109,9 +112,99 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putFloat("percentage", percentage);
-        Log.d("XXXX", "onSaveInstanceState"+percentage);
+        Log.d(TAG, "onSaveInstanceState"+percentage);
         super.onSaveInstanceState(outState);
 
 
+    }
+
+
+    @Override
+    protected void onStart() {
+        // Always call super class for necessary
+        // initialization/implementation.
+        super.onStart();
+        Log.d(TAG, "onStart() - the activity is about to become visible");
+    }
+
+    /**
+     * Hook method called after onRestoreStateInstance(Bundle) only if
+     * there is a prior saved instance state in Bundle
+     * object. onResume() is called immediately after
+     * onStart(). onResume() is called when user resumes activity from
+     * paused state (onPause()) User can begin interacting with
+     * activity. Place to start animations, acquire exclusive
+     * resources, such as the camera.
+     */
+    @Override
+    protected void onResume() {
+        // Always call super class for necessary
+        // initialization/implementation and then log which lifecycle
+        // hook method is being called.
+        super.onResume();
+        Log.d(TAG,
+                "onResume() - the activity has become visible (it is now " +
+                        "\"resumed\")");
+    }
+
+    /**
+     * Hook method called when an Activity loses focus but is still visible in
+     * background. May be followed by onStop() or onResume(). Delegate more CPU
+     * intensive operation to onStop for seamless transition to next activity.
+     * Save persistent state (onSaveInstanceState()) in case app is killed.
+     * Often used to release exclusive resources.
+     */
+    @Override
+    protected void onPause() {
+        // Always call super class for necessary
+        // initialization/implementation and then log which lifecycle
+        // hook method is being called.
+        super.onPause();
+        Log.d(TAG,
+                "onPause() - another activity is taking focus (this activity " +
+                        "is about to be \"paused\")");
+    }
+
+    /**
+     * Called when Activity is no longer visible. Release resources
+     * that may cause memory leak. Save instance state
+     * (onSaveInstanceState()) in case activity is killed.
+     */
+    @Override
+    protected void onStop() {
+        // Always call super class for necessary
+        // initialization/implementation and then log which lifecycle
+        // hook method is being called.
+        super.onStop();
+        Log.d(TAG,
+                "onStop() - the activity is no longer visible (it is now " +
+                        "\"stopped\")");
+    }
+
+    /**
+     * Hook method called when user restarts a stopped activity. Is
+     * followed by a call to onStart() and onResume().
+     */
+    @Override
+    protected void onRestart() {
+        // Always call super class for necessary
+        // initialization/implementation and then log which lifecycle
+        // hook method is being called.
+        super.onRestart();
+        Log.d(TAG, "onRestart() - the activity is about to be restarted()");
+    }
+
+    /**
+     * Hook method that gives a final chance to release resources and
+     * stop spawned threads. onDestroy() may not always be called-when
+     * system kills hosting process
+     */
+    @Override
+    protected void onDestroy() {
+        // Always call super class for necessary
+        // initialization/implementation and then log which lifecycle
+        // hook method is being called.
+        super.onDestroy();
+        Log.d(TAG, "onDestroy() - the activity is about to be destroyed");
     }
 }
