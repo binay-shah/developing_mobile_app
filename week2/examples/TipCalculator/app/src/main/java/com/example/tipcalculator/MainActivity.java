@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         tvTipPercent = (TextView)findViewById(R.id.tvTipPercent);
         tvTipAmount  = (TextView)findViewById(R.id.tvTipAmount);
         tvBillTotalAmount = (TextView)findViewById(R.id.tvBillTotalAmount);
-        Log.d(TAG, "created"+percentage);
+        Log.d(TAG, "created "+percentage);
         if(savedInstanceState != null){
             percentage = savedInstanceState.getFloat("percentage");
-            Log.d(TAG, "recreated"+percentage);
+            Log.d(TAG, "recreated "+percentage);
         }
 
         etBillAmount.addTextChangedListener(new TextWatcher() {
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putFloat("percentage", percentage);
-        Log.d(TAG, "onSaveInstanceState"+percentage);
+        Log.d(TAG, "onSaveInstanceState "+percentage);
         super.onSaveInstanceState(outState);
 
 
