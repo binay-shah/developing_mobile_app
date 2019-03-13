@@ -1,4 +1,4 @@
-## Materials for Week2
+## Materials for Week3
 
 1. [Class Lectures and slides](http://codelab101.glitch.me)
 
