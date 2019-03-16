@@ -13,7 +13,7 @@
     - Coordinator Layout
 * Navigation
     - Drawer
-* UI Testing with Espresso
+
 
 ## User Stories
 
