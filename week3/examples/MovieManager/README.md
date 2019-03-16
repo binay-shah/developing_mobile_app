@@ -24,12 +24,11 @@ The following **required** functionality is completed:
 * [x] For each movie displayed, user can see the following details:
   * [x] Title, Poster Image, Overview (Portrait mode)
 * [x] User interface improved through styling and coloring and using material design elements such as [CardView](https://developer.android.com/reference/android/support/v7/widget/CardView.html) and [Navigation Drawer](https://developer.android.com/training/implementing-navigation/nav-drawer.html)
-* [x] The app is using [Espresso](https://developer.android.com/training/testing/ui-testing/espresso-testing.html) to test the UI interactions.
+
 
 The following **bonus** features are implemented:
 
 * [x] Allow user to view details of the movie including ratings and popularity within a separate activity.
-* [x] The app implement the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
 * [x] All the values for dimensions are specified in dimens.xml
 * [x] All the string values are specified in strings.xml
 
@@ -46,7 +45,7 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/IsabelPalomar/MovieManagerApp/blob/master/MovieManager.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/binay-shah/developing_mobile_app/blob/master/week3/examples/MovieManager/movie_manager_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
