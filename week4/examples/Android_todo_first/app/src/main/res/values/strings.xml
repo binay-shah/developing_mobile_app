@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Android_todo_first</string>
+
+
+    <string name="todos">Todos</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+
+    <string-array name="todos">
+        <item>Wake up</item>
+        <item>Drink Coffee</item>
+        <item>Make at least one person laugh</item>
+        <item>Plant a tree</item>
+        <item>Ponder on duality of existance</item>
+        <item>Go to sleep</item>
+    </string-array>
+
+</resources>
