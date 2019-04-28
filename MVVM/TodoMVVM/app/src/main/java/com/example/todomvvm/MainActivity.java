@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
     // Member variables for the adapter and RecyclerView
     private RecyclerView mRecyclerView;
     private TodoAdapter mAdapter;
-    private AppDatabase mDb;
+    private MainViewModel mViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
                     public void run() {
                         int position = viewHolder.getAdapterPosition();
                         List<Todo> todoList = mAdapter.getTodos();
-                        mDb.todoDao().deleteTodo(todoList.get(position));
+                        mViewModel.delete(todoList.get(position));
 
                     }
                 });
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
             }
         });
 
-        mDb = AppDatabase.getInstance(getApplicationContext());
+
         setUpViewModel();
     }
 
@@ -101,9 +102,9 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
     }
 
     private void setUpViewModel() {
-        MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-        viewModel.getTodos().observe(this, new Observer<List<Todo>>() {
+        mViewModel.getTodos().observe(this, new Observer<List<Todo>>() {
             @Override
             public void onChanged(@Nullable List<Todo> todos) {
                 mAdapter.setTodoList(todos);
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
         // Launch AddTaskActivity adding the itemId as an extra in the intent
         Intent intent = new Intent(MainActivity.this, AddTodoActivity.class);
         intent.putExtra(AddTodoActivity.EXTRA_TASK_ID, itemId);
+        startActivity(intent);
     }
 
 
