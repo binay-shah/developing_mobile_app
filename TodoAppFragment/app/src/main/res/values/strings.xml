@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TodoApp Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo_title">todo title</string>
+    <string name="todo_title_hint">todo title hint</string>
+    <string name="todo_title_label">One line description of the todo</string>
+    <string name="todo_detail_label">detail of what to do</string>
+    <string name="todo_complete_label">is it complete?</string>
+    <string name="todo_date">Todo date</string>
+
+    <string name="date_picker_title">Todo date:</string>
+    <string name="new_todo">New Todo</string>
+</resources>
