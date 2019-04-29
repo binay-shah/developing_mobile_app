@@ -6,11 +6,11 @@ import android.arch.lifecycle.ViewModel;
 import com.example.todomvvm.database.AppDatabase;
 import com.example.todomvvm.database.Todo;
 
-public class AddTaskViewModel extends ViewModel {
+public class AddTodoViewModel extends ViewModel {
 
     private LiveData<Todo> todo;
 
-    public AddTaskViewModel(AppDatabase database, int todoId){
+    public AddTodoViewModel(AppDatabase database, int todoId){
         todo = database.todoDao().loadTodoById(todoId);
     }
 

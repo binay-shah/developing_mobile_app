@@ -46,7 +46,7 @@ public class TodoRepository {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                todoDao.deleteTodo(todo);
+                todoDao.update(todo);
             }
         });
     }

@@ -2,6 +2,8 @@ package com.example.todomvvm;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -60,11 +62,13 @@ public class AddTodoActivity extends AppCompatActivity {
                 // populate the UI
                 mTodoId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TODO_ID);
 
-                        final LiveData<Todo> todo = mDb.todoDao().loadTodoById(mTodoId);
-                        todo.observe(AddTodoActivity.this, new Observer<Todo>() {
+                        AddTodoViewModelFactory factory = new AddTodoViewModelFactory(mDb, mTodoId);
+                        final AddTodoViewModel viewModel = ViewModelProviders.of(this, factory).get(AddTodoViewModel.class);
+
+                        viewModel.getTodo().observe(AddTodoActivity.this, new Observer<Todo>() {
                             @Override
                             public void onChanged(@Nullable Todo todoEntry) {
-                                todo.removeObserver(this);
+                                viewModel.getTodo().removeObserver(this);
                                 Log.d(TAG, "Receiving database update from LiveData");
                                 populateUI(todoEntry);
                             }
