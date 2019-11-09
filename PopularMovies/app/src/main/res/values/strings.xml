@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <string name="action_retry">Retry</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Popular</string>
+    <string name="label_votes">%s votes</string>
+    <string name="filter_popup_title">Filter results by:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_removed_successfully">Movie removed from favourites list</string>
+    <string name="movie_added_successfully">Movie added to favourites list</string>
+    <string name="technical_error">Oops, a technical error happened</string>
+    <string name="no_result_found">No result found</string>
+
+    <string-array name="filter_list">
+        <item>Popular</item>
+        <item>Top Rated</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/discoverMoviesFragment"
+            android:title="Discover"
+            android:enabled="true"
+            android:icon="@drawable/ic_whatshot_black_24dp"/>
+
+    <item
+        android:id="@+id/favouritesFragment"
+        android:title="Favourites"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_24dp"/>
+
+</menu>

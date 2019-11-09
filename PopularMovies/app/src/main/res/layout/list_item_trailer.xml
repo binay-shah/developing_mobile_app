@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="trailer" type="com.example.popularmovies.data.model.Trailer"/>
+        <variable name="videoCallback" type="com.example.popularmovies.ui.details.trailers.TrailersAdapter.VideoClick"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content" android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp" app:cardCornerRadius="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{() -> videoCallback.onClick(trailer)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:id="@+id/trailer_image"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio="3:2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            
+            <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:srcCompat="@drawable/ic_play_circle_filled_black_24dp"
+                    android:id="@+id/imageView2"
+                    app:layout_constraintEnd_toEndOf="@+id/trailer_image"
+                    app:layout_constraintStart_toStartOf="@+id/trailer_image"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="@+id/trailer_image" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/trailer_image"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
